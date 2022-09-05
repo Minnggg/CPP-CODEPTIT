@@ -13,7 +13,7 @@ int main()
 	{
 		int n,q;
 		cin >> n >> q;
-		int a[n+1];
+		long long a[n+1];
 		cin >> a[1];
 		for(int i=2;i<=n;i++) 
 		{
@@ -25,7 +25,8 @@ int main()
 		{
 			int l,r;
 			cin >> l >> r;
-			cout << a[r]-a[l-1] << "\n";
+			if(l==1) cout << a[r] << "\n";
+			else cout << a[r]-a[l-1] << "\n";
 		}
 	}
  	return 0;
