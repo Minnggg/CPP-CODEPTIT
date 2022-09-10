@@ -1,12 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int check_tang(long long n)
+{
+	int temp=n%10;
+	n/=10;
+	while(n>0) 
+	{
+		int x=n%10;
+		n/=10;
+		if(x>=temp) return 0; 
+		temp=x;
+	}
+	return 1;
+}
 
+int check_giam(long long n)
+{
+	int temp=n%10;
+	n/=10;
+	while(n>0)
+	{
+		int x=n%10;
+		n/=10;
+		if(x<=temp) return 0; 
+		temp=x;
+	}
+	return 1;
+}
 int main()
 {
- 	ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-	printf("%d %d %d %d",'a','z','A','Z');
- 	return 0;
+ 	int n ;
+ 	cin >> n;
+ 	cout << check_tang(n);
 }
