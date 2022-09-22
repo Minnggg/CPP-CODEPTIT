@@ -3,21 +3,19 @@ using namespace std;
 
 void check(string s) 
 {
+	int idx=0;
 	int c=0,l=0;
 	stringstream ss(s);
 	string sss;
-	while(ss >> sss) 
+	while(ss >> s) 
 	{
-		int temp=sss[0]-'0';
-		for(int i=1;i<sss.length();i++)
-		{
-			temp=temp*10+sss[i]-'0';
-		}
+		int temp=stoi(s);
 		if(temp%2==0) c++;
 		else l++;
+		idx++;
 	}
-	if(c>l) cout << "YES";
-	else if(l>c) cout << "YES";
+	if(c>l&&idx%2==0) cout << "YES";
+	else if(l>c&&idx%2==1) cout << "YES";
 	else cout << "NO";
 	cout << "\n";
 }
